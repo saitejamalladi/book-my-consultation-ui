@@ -1,0 +1,20 @@
+.HeaderContainer {
+	background-color: purple;
+	height: 70px;
+	padding: 11px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.BrandContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.BrandImage {
+	background-color: #ff7f7f;
+	height: 35px;
+}
+.BrandName {
+	color: white;
+}

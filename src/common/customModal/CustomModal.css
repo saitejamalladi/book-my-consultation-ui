@@ -1,0 +1,15 @@
+.Header {
+	color: white;
+	background-color: purple;
+	height: 70px;
+	padding: 11px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+.Main {
+	text-align: left;
+	margin: 15px;
+	padding: 20px;
+	cursor: pointer;
+}
