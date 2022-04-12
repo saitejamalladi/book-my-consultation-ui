@@ -7,6 +7,7 @@ import Login from "../login/Login";
 import DoctorList from "../doctorList/DoctorList";
 import CustomModal from "../../common/customModal/CustomModal";
 import Appointment from "../appointment/Appointment";
+import Register from "../register/Register";
 
 const Home = () => {
   const [authenticated, setAuthenticated] = useState(
@@ -55,7 +56,7 @@ const Home = () => {
               <Login handleLogin={handleLogin} />
             </TabPanel>
             <TabPanel value="register">
-              <div>Register</div>
+              <Register />
             </TabPanel>
           </Box>
         </TabContext>

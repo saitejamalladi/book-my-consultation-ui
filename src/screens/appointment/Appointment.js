@@ -20,8 +20,13 @@ function Appointment({ authenticated }) {
       setLoading(true);
       try {
         let appointments = await appointmentsFetchService();
-        setAppointments(appointments);
-        setLoading(false);
+        if (!appointments.error) {
+          setAppointments(appointments);
+          setLoading(false);
+        } else {
+          setLoading(false);
+          alert("Error fetching the appointments : " + appointments.error);
+        }
       } catch (error) {
         alert("Error fetching the appointments" + error);
         setLoading(false);
@@ -108,12 +113,13 @@ function Appointment({ authenticated }) {
                   <Typography component="div" style={{ padding: 0 }}>
                     priorMedicalHistory: {appointment.priorMedicalHistory}
                   </Typography>
-                  <Grid container spacing={4}>
+                  <Grid container>
                     <Grid item xs={3}>
                       <Button
                         color={"primary"}
                         variant={"contained"}
                         onClick={() => openRatingAppointment(appointment)}
+                        style={{ marginTop: 24 }}
                       >
                         Rate Appointment
                       </Button>

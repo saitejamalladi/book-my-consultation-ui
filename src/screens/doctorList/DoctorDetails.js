@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import CustomModal from "../../common/customModal/CustomModal";
 import { doctorDetailsFetchService } from "../../util/fetch";
 import { LinearProgress, Typography } from "@material-ui/core";
+import { Rating } from "@material-ui/lab";
 
 function DoctorDetails({ doctorId, onClose }) {
   const [doctor, setDoctor] = useState();
@@ -36,7 +37,15 @@ function DoctorDetails({ doctorId, onClose }) {
           <Typography>City: {doctor.address?.city}</Typography>
           <Typography>Email: {doctor.emailId}</Typography>
           <Typography>Mobile: {doctor.mobile}</Typography>
-          <Typography>Rating: {doctor.rating}</Typography>
+          <Typography>
+            Rating:
+            <Rating
+              name="size-small"
+              defaultValue={doctor.rating}
+              size="small"
+              readOnly
+            />
+          </Typography>
         </div>
       ) : (
         <LinearProgress />

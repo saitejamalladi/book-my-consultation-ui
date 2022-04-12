@@ -16,7 +16,7 @@ import BookAppointment from "./BookAppointment";
 function DoctorList() {
   const [doctors, setDoctors] = useState([]);
   const [specialities, setSpecialities] = useState([]);
-  const [selectedSpeciality, setSelectedSpeciality] = useState("ENT");
+  const [selectedSpeciality, setSelectedSpeciality] = useState(null);
   const [selectedDoctorId, setSelectedDoctorId] = useState(null);
   const [bookAppointmentDoctor, setBookAppointmentDoctor] = useState(null);
 
@@ -53,7 +53,7 @@ function DoctorList() {
       spacing={2}
       style={{ width: "100%" }}
     >
-      <Grid item style={{ width: "50%" }}>
+      <Grid item style={{ width: "40%" }}>
         <TextField
           id="speciality"
           select
@@ -75,7 +75,7 @@ function DoctorList() {
       </Grid>
       {doctors.length > 0 ? (
         doctors.map((doctor, index) => (
-          <Grid item key={index} style={{ width: "50%" }}>
+          <Grid item key={index} style={{ width: "40%" }}>
             <Paper elevation={2}>
               <Box
                 sx={{
@@ -88,10 +88,7 @@ function DoctorList() {
                   },
                 }}
               >
-                <Typography
-                  component="div"
-                  style={{ padding: 0, marginBottom: 2 }}
-                >
+                <Typography component="div" style={{ padding: 0, margin: 2 }}>
                   Doctor Name: {doctor.firstName} + {doctor.lastName}
                 </Typography>
                 <Typography component="div" style={{ padding: 0 }}>
@@ -131,7 +128,7 @@ function DoctorList() {
           </Grid>
         ))
       ) : (
-        <Box sx={{ width: "50%" }}>
+        <Box sx={{ width: "40%" }}>
           <LinearProgress />
         </Box>
       )}
